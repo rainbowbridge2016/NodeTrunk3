@@ -223,7 +223,7 @@ def trunkselectdisplay(sp,pg): #中继信息显示模块。
             tidlist.sort()
             trunksnumber = len(tidlist)
             scprint.print(('--==<%s>---><%s>,')%(strn,endn), color = 'DarkOrange3', bcolor='Grey7', end='')
-            scprint.print(('has %d trunks.==--')%(trunksnumber), color = 'DarkOrange3', bcolor='Grey7')
+            scprint.print(('between has %d trunks.==--')%(trunksnumber), color = 'DarkOrange3', bcolor='Grey7')
             linebackground = ['Grey15','Grey7']
 
             '''
