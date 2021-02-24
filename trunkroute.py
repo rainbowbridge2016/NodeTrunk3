@@ -209,7 +209,6 @@ def trunkselectdisplay(sp,pg): #中继信息显示模块。
         for np in croutepeer:
             strn = np[0] 
             endn = np[1] 
-            scprint.print(('<%s>---><%s>')%(strn,endn), color = 'DarkOrange3', bcolor='Grey7' )
             sqlsent = "select 唯一标识,起始端名称,起始端位置,光缆名称,对端位置,对端名称,光缆长度,对应芯数,已经占用芯数,占用率,主要敷设方式,建设年份,资源可用状态,维护单位 " + \
                       " from " + trunktablename + \
                       " where (起始端名称 in (" + "'" + strn + "','" + endn + "'" + ") and 对端名称 in (" + "'" + strn + "','" + endn + "'" + ")) and (唯一标识 <> " + "'" + "K135" + "')" + \
@@ -222,8 +221,11 @@ def trunkselectdisplay(sp,pg): #中继信息显示模块。
                 tidset.add(t[0])
             tidlist = list(tidset)
             tidlist.sort()
-            #print(tidlist)
+            trunksnumber = len(tidlist)
+            scprint.print(('--==<%s>---><%s>,')%(strn,endn), color = 'DarkOrange3', bcolor='Grey7', end='')
+            scprint.print(('has %d trunks.==--')%(trunksnumber), color = 'DarkOrange3', bcolor='Grey7')
             linebackground = ['Grey15','Grey7']
+
             '''
             for i in tidlist:
                 print(i, end = ' ')
